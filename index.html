@@ -300,6 +300,39 @@
   }
   
 
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+.project-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+.project-card i {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #b98eff;
+}
+.project-card h3 {
+  color: #f5f5f5;
+  margin: 10px 0 5px;
+}
+.project-card p {
+  font-size: 14px;
+  color: #ddd;
+  line-height: 1.5;
+}
+
 </style>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
@@ -430,18 +463,61 @@ setInterval(() => {
 </script>
 <section id="projects" class="content">
   <h2><i class="fas fa-project-diagram"></i> Projects</h2>
-  <p>My project portfolio reflects a variety of analytical challenges — from uncovering social patterns to optimizing business decisions. I use Python, SQL, and visualization tools to bring clarity to complex data and tell compelling stories.</p>
-  <ul>
-    <li><i class="fas fa-chart-line"></i> <strong>Suicide Rate EDA</strong><br><small>Analyzed global suicide data by gender, age, and country using Python and visualizations to identify critical mental health trends.</small></li>
-    <li><i class="fas fa-users"></i> <strong>Youth Unemployment Analysis</strong><br><small>Created an interactive notebook to explore youth unemployment across regions, uncovering socioeconomic drivers using data wrangling and plots.</small></li>
-    <li><i class="fas fa-film"></i> <strong>Netflix Show Dashboard</strong><br><small>Cleaned and visualized Netflix's dataset in Python to analyze genre distribution, show trends, and content popularity using seaborn and matplotlib.</small></li>
-    <li><i class="fas fa-hamburger"></i> <strong>FoodHub Sales Insights</strong><br><small>Used SQL and Excel to examine food delivery patterns, customer demographics, and order performance for strategic decision-making.</small></li>
-    <li><i class="fas fa-prescription-bottle-alt"></i> <strong>Pharma Sales Dashboard</strong><br><small>Built a dynamic Power BI dashboard to track pharmaceutical sales KPIs, regional performance, and monthly trends.</small></li>
-  </ul>
+  <p>Here are some of the featured projects I’ve worked on, each aimed at solving real-world problems through data-driven insights.</p>
+  <div class="project-grid">
+    <div class="project-card">
+      <i class="fas fa-chart-line"></i>
+      <h3>Suicide Rate EDA</h3>
+      <p>Exploratory analysis of global suicide statistics categorized by country, gender, and age. Tools used: Python, Pandas, Matplotlib.</p>
+    </div>
+    <div class="project-card">
+      <i class="fas fa-users"></i>
+      <h3>Youth Unemployment Analysis</h3>
+      <p>Investigated patterns in global youth unemployment data and visualized socioeconomic correlations. Tools used: Python, Seaborn.</p>
+    </div>
+    <div class="project-card">
+      <i class="fas fa-film"></i>
+      <h3>Netflix Show Dashboard</h3>
+      <p>Built a visual dashboard to analyze content types, release trends, and genre popularity. Tools used: Python, Plotly, Tableau.</p>
+    </div>
+    <div class="project-card">
+      <i class="fas fa-hamburger"></i>
+      <h3>FoodHub Sales Insights</h3>
+      <p>Examined sales trends and customer behavior in a fictional food delivery company. Tools used: SQL, Excel, Power BI.</p>
+    </div>
+    <div class="project-card">
+      <i class="fas fa-prescription-bottle-alt"></i>
+      <h3>Pharma Sales Dashboard</h3>
+      <p>Created an interactive dashboard to monitor KPIs and trends for pharma sales data. Tools used: Power BI, Excel.</p>
+    </div>
+  </div>
+</section>
 </section>
 </section>
 
-  <section id="why" class="content">
+  <section id="services" class="content">
+  <h2><i class="fas fa-concierge-bell"></i> Services</h2>
+  <p>I offer a variety of services that combine business insight and data expertise to deliver actionable outcomes. These services reflect my strengths in data storytelling, strategic analysis, and digital presentation.</p>
+  <div class="project-grid">
+    <div class="project-card">
+      <i class="fas fa-chart-pie"></i>
+      <h3>Data Analysis & Visualization</h3>
+      <p>Unlock insights from raw data using tools like Python, Excel, and Power BI. I turn data into impactful visuals and dashboards.</p>
+    </div>
+    <div class="project-card">
+      <i class="fas fa-lightbulb"></i>
+      <h3>Business Intelligence</h3>
+      <p>Help businesses make data-informed decisions through structured analysis, KPI design, and performance tracking.</p>
+    </div>
+    <div class="project-card">
+      <i class="fas fa-desktop"></i>
+      <h3>Portfolio & Resume Design</h3>
+      <p>Craft modern, responsive personal websites or data-centric CVs that leave a strong digital impression.</p>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="content">
   <h2><i class="fas fa-star"></i> Why Choose Me</h2>
   <p>As someone who bridges the gap between business strategy and data science, I bring a unique mix of analytical precision and big-picture thinking. I thrive in environments that require innovation, curiosity, and collaborative problem solving.</p>
   <p>I'm continuously upskilling through industry-certified programs and real-world projects. I bring enthusiasm, structure, and strong ethics to every role. Whether it’s contributing insights, writing reports, or leading initiatives — I’m ready to make a difference.</p>
