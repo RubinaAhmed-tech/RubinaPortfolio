@@ -306,6 +306,15 @@
   line-height: 1.5;
 }
 
+  .animated-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
+  }
+  .animated-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 </style>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
@@ -324,39 +333,35 @@
     <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
   </nav>
 
-  <section class="hero" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-  <div style="max-width: 700px; margin: auto; text-align: center;">
-    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_touohxv0.json"  background="transparent"  speed="1"  style="width: 180px; height: 180px; margin: 0 auto 20px;"  loop autoplay></lottie-player>
-    <h1 id="typing-text" style="font-size: 3.2em; font-weight: 800; margin-bottom: 10px; text-align: center; letter-spacing: 1px; color: #f8eaff; text-shadow: 2px 2px 4px rgba(0,0,0,0.6);"></h1>
-    <h3 style="font-size: 1.3em; font-weight: 500; color: #d4c2f0; margin-bottom: 24px; font-style: italic;">Data Analyst | Business Strategist</h3>
-    <img src="Rubina_random.png" alt="Rubina Ahmed Mahar" class="profile-pic" style="box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);">
-    <a href="rubina_ahmed_mahar_resume_2025.pdf" download class="download-btn" style="display:inline-block; margin-top:20px; padding:12px 28px; background: linear-gradient(135deg, #a64d79, #6A1E55); color:#fff; text-decoration:none; border-radius:30px; font-weight:bold; font-size: 16px; box-shadow: 0 6px 12px rgba(0,0,0,0.3); transition: background 0.3s ease, transform 0.3s ease;">Download Resume</a>
-  </div>
-  </div>
-</section>
-
-  <section id="about" class="content" style="text-align: justify; background: linear-gradient(145deg, #2f2e41 10%, #46344e 90%); background-size: cover;">
+  <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); width: 80%; margin: 60px auto;">
+<section$1class="content animated-section" style="text-align: justify; background: linear-gradient(145deg, #2f2e41 10%, #46344e 90%); background-size: cover;">
   <p style="font-size: 1.2em; font-weight: 500; color: #e0d4ff; max-width: 700px; margin: auto auto 1em;">Welcome to my digital showcase — a blend of creativity, strategy, and data-driven thinking. Explore how I transform numbers into narratives.</p>
 <blockquote style="font-style: italic; color: #c2b7ff; max-width: 600px; margin: 1em auto; font-size: 1.1em;">“Turning curiosity into capability, and data into direction.”</blockquote>
-  <h2><i class="fas fa-user-circle"></i> About Me</h2>
+  <h2><span style="color:#5BC0BE; font-weight:bold;">0$1.</span> <i class="fas fa-user-circle"></i> About Me</h2>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px auto; width: 60%;">
   <p>I’m Rubina Ahmed Mahar, a BBA student at Iqra University with a passion for data science and business analytics. I specialize in turning complex data into actionable insights using tools like Python, SQL, Excel, Power BI, and SPSS. My foundation in business studies gives me a unique edge in understanding both the technical and strategic sides of data-driven decision making.</p>
   <p>My journey has been enriched through research on Corporate Social Responsibility, various internship roles, and hands-on projects analyzing global datasets. I thrive in environments where collaboration, problem-solving, and innovation meet. Whether it’s evaluating customer satisfaction or forecasting trends, I bring enthusiasm and precision to every challenge.</p>
 </section>
 
   
-    <ul id="skills">
-  <li><i class="fab fa-python"></i> Python<div class="bar"><div style="width:90%">90%</div></div></li>
-  <li><i class="fas fa-database"></i> SQL<div class="bar"><div style="width:85%">85%</div></div></li>
-  <li><i class="fas fa-file-excel"></i> Excel<div class="bar"><div style="width:80%">80%</div></div></li>
-  <li><i class="fas fa-chart-bar"></i> Power BI<div class="bar"><div style="width:75%">75%</div></div></li>
-  <li><i class="fas fa-code"></i> HTML/CSS<div class="bar"><div style="width:88%">88%</div></div></li>
-  <li><i class="fas fa-brain"></i> Data Analysis<div class="bar"><div style="width:92%">92%</div></div></li>
-</ul>
+    <section id="skills" class="content">
+  <h2><span style="color:#5BC0BE; font-weight:bold;">02.</span> <i class="fas fa-tools"></i> Skills</h2>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px auto; width: 60%;">
+  <ul id="skills">
+    <li><i class="fab fa-python"></i> Python<div class="bar"><div style="width:90%">90%</div></div></li>
+    <li><i class="fas fa-database"></i> SQL<div class="bar"><div style="width:85%">85%</div></div></li>
+    <li><i class="fas fa-file-excel"></i> Excel<div class="bar"><div style="width:80%">80%</div></div></li>
+    <li><i class="fas fa-chart-bar"></i> Power BI<div class="bar"><div style="width:75%">75%</div></div></li>
+    <li><i class="fas fa-code"></i> HTML/CSS<div class="bar"><div style="width:88%">88%</div></div></li>
+    <li><i class="fas fa-brain"></i> Data Analysis<div class="bar"><div style="width:92%">92%</div></div></li>
+  </ul>
+</section>
 
   
 </div>
 <section id="experience" class="content" style="text-align: justify;">
-  <h2><i class="fas fa-briefcase"></i> Experience</h2>
+  <h2><span style="color:#5BC0BE; font-weight:bold;">03.</span> <i class="fas fa-briefcase"></i> Experience</h2>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px auto; width: 60%;">
   <p>Throughout my academic and early professional journey, I've actively pursued opportunities that help me apply my skills in real-world environments. These experiences have equipped me with practical knowledge and strengthened my ability to work in cross-functional teams, communicate insights effectively, and drive impactful outcomes.</p>
   <p>I've worked as a QA Analyst at Oigetit.ai ensuring digital product quality, conducted data-driven visualizations during my internship at Prodigy InfoTech, and built plant disease prediction models during my AI internship at SYNC. Additionally, I engaged in market and strategy research at AI Data Yard and GAOTek Inc., while also serving as a student ambassador for Paklaunch to promote tech-driven learning communities.</p>
   <ul>
@@ -370,7 +375,8 @@
 </section>
 
   <section id="certifications" class="content" style="text-align: justify;">
-  <h2><i class="fas fa-certificate"></i> Certifications</h2>
+  <h2><span style="color:#5BC0BE; font-weight:bold;">04.</span> <i class="fas fa-certificate"></i> Certifications</h2>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px auto; width: 60%;">
   <p>I’ve completed a wide range of certifications from top institutions and learning platforms that have helped me build a solid foundation in data analysis, programming, and business intelligence. These credentials reflect both my technical expertise and my commitment to lifelong learning.</p>
   <p>My certifications span across practical tools like SQL, Python, Excel, and Power BI, as well as advanced business and strategy programs such as McKinsey Forward and CompTIA Data+. Each program has empowered me with industry-relevant skills that I apply directly in my projects and professional roles.</p>
   <div class="cert-grid">
@@ -397,7 +403,8 @@
   </div>
 <svg viewBox="0 0 1440 100" style="display:block" xmlns="http://www.w3.org/2000/svg"><path fill="#2f2e41" d="M0,0L80,10.7C160,21,320,43,480,64C640,85,800,107,960,117.3C1120,128,1280,128,1360,128L1440,128V0H1360C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0H0Z"></path></svg>
 <section id="testimonials" class="content">
-  <h2><i class="fas fa-comment-dots"></i> Testimonials</h2>
+  <h2><span style="color:#5BC0BE; font-weight:bold;">07.</span> <i class="fas fa-comment-dots"></i> Testimonials</h2>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px auto; width: 60%;">
   <div class="testimonial">“Rubina brings strong data skills and sharp thinking to any team. Her attention to detail is unmatched.”</div>
   <div class="testimonial">“A true professional in analytics and communication. Rubina’s dashboards are both insightful and stunning.”</div>
   <div class="testimonial">“Her ability to turn complex data into strategic insights impressed everyone during our collaboration.”</div>
@@ -441,7 +448,8 @@ setInterval(() => {
 </script>
 <svg viewBox="0 0 1440 100" style="display:block" xmlns="http://www.w3.org/2000/svg"><path fill="#2f2e41" d="M0,0L80,5.3C160,11,320,21,480,32C640,43,800,53,960,69.3C1120,85,1280,107,1360,117.3L1440,128V0H1360C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0H0Z"></path></svg>
 <section id="projects" class="content" style="text-align: justify;">
-  <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+  <h2><span style="color:#5BC0BE; font-weight:bold;">05.</span> <i class="fas fa-project-diagram"></i> Projects</h2>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px auto; width: 60%;">
   <p>Here are some of the featured projects I’ve worked on, each aimed at solving real-world problems through data-driven insights.</p>
   <div class="project-grid">
     <div class="project-card">
@@ -471,52 +479,48 @@ setInterval(() => {
     </div>
   </div>
 </section>
-</section>
-</section>
 
   <svg viewBox="0 0 1440 100" style="display:block" xmlns="http://www.w3.org/2000/svg">
   <path fill="#2f2e41" d="M0,0L80,10.7C160,21,320,43,480,64C640,85,800,107,960,117.3C1120,128,1280,128,1360,128L1440,128V0H1360C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0H0Z"/>
 </svg>
 
-  <h2><i class="fas fa-database"></i> Data Analytics & Science Services</h2>
-<p>Explore the key services I offer across the data analytics and data science spectrum. These services are designed to support business intelligence, research, and data-driven decision making.</p>
-<div class="project-grid">
-  <div class="project-card">
-    <i class="fas fa-chart-line"></i>
-    <h3>Exploratory Data Analysis (EDA)</h3>
-    <p>Derive insights from raw datasets using Python, pandas, matplotlib, and seaborn to inform business and research directions.</p>
-  </div>
-  <div class="project-card">
-    <i class="fas fa-cogs"></i>
-    <h3>Data Cleaning & Wrangling</h3>
-    <p>Transform messy, incomplete data into usable formats through preprocessing, normalization, and integrity checks.</p>
-  </div>
-  <div class="project-card">
-    <i class="fas fa-brain"></i>
-    <h3>Predictive Modeling</h3>
-    <p>Use machine learning libraries like scikit-learn to build classification and regression models that predict future outcomes.</p>
-  </div>
-  <div class="project-card">
-    <i class="fas fa-chart-bar"></i>
-    <h3>Dashboard Development</h3>
-    <p>Create real-time dashboards in Power BI, Tableau, or Excel to monitor KPIs and business metrics.</p>
-  </div>
-  <div class="project-card">
-    <i class="fas fa-database"></i>
-    <h3>SQL Analysis</h3>
-    <p>Perform queries, joins, aggregations, and views on relational databases to derive structured insights from business data.</p>
-  </div>
-  <div class="project-card">
-    <i class="fas fa-file-alt"></i>
-    <h3>Data Reporting & Strategy</h3>
-    <p>Summarize technical findings into business-friendly reports and suggest strategic recommendations for implementation.</p>
-  </div>
-</div>
+  <section id="services" class="content" style="text-align: justify;">
+  <h2><span style="color:#5BC0BE; font-weight:bold;">06.</span> <i class="fas fa-database"></i> Data Analytics & Science Services</h2>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px auto; width: 60%;">
+  <p>Explore the key services I offer across the data analytics and data science spectrum. These services are designed to support business intelligence, research, and data-driven decision making.</p>
+  <div class="project-grid">
     <div class="project-card">
-      <i class="fas fa-lightbulb"></i>
-      <h3>Business Intelligence</h3>
-      <p>Help businesses make data-informed decisions through structured analysis, KPI design, and performance tracking.</p>
+      <i class="fas fa-chart-line"></i>
+      <h3>Exploratory Data Analysis (EDA)</h3>
+      <p>Derive insights from raw datasets using Python, pandas, matplotlib, and seaborn to inform business and research directions.</p>
     </div>
+    <div class="project-card">
+      <i class="fas fa-cogs"></i>
+      <h3>Data Cleaning & Wrangling</h3>
+      <p>Transform messy, incomplete data into usable formats through preprocessing, normalization, and integrity checks.</p>
+    </div>
+    <div class="project-card">
+      <i class="fas fa-brain"></i>
+      <h3>Predictive Modeling</h3>
+      <p>Use machine learning libraries like scikit-learn to build classification and regression models that predict future outcomes.</p>
+    </div>
+    <div class="project-card">
+      <i class="fas fa-chart-bar"></i>
+      <h3>Dashboard Development</h3>
+      <p>Create real-time dashboards in Power BI, Tableau, or Excel to monitor KPIs and business metrics.</p>
+    </div>
+    <div class="project-card">
+      <i class="fas fa-database"></i>
+      <h3>SQL Analysis</h3>
+      <p>Perform queries, joins, aggregations, and views on relational databases to derive structured insights from business data.</p>
+    </div>
+    <div class="project-card">
+      <i class="fas fa-file-alt"></i>
+      <h3>Data Reporting & Strategy</h3>
+      <p>Summarize technical findings into business-friendly reports and suggest strategic recommendations for implementation.</p>
+    </div>
+  </div>
+</section>
     <div class="project-card">
       <i class="fas fa-desktop"></i>
       <h3>Portfolio & Resume Design</h3>
@@ -529,7 +533,8 @@ setInterval(() => {
   <path fill="#2f2e41" d="M0,0L80,10.7C160,21,320,43,480,64C640,85,800,107,960,117.3C1120,128,1280,128,1360,128L1440,128V0H1360C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0H0Z"/>
 </svg>
 
-  <h2><i class="fas fa-star"></i> Why Choose Me</h2>
+  <h2><span style="color:#5BC0BE; font-weight:bold;">08.</span> <i class="fas fa-star"></i> Why Choose Me</h2>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px auto; width: 60%;">
   <p>As someone who bridges the gap between business strategy and data science, I bring a unique mix of analytical precision and big-picture thinking. I thrive in environments that require innovation, curiosity, and collaborative problem solving.</p>
   <p>I'm continuously upskilling through industry-certified programs and real-world projects. I bring enthusiasm, structure, and strong ethics to every role. Whether it’s contributing insights, writing reports, or leading initiatives — I’m ready to make a difference.</p>
   <ul>
@@ -542,7 +547,8 @@ setInterval(() => {
 
   <svg viewBox="0 0 1440 100" style="display:block" xmlns="http://www.w3.org/2000/svg"><path fill="#2f2e41" d="M0,0L80,5.3C160,11,320,21,480,32C640,43,800,53,960,69.3C1120,85,1280,107,1360,117.3L1440,128V0H1360C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0H0Z"></path></svg>
 <section id="contact" class="content" style="text-align: justify;">
-  <h2><i class="fas fa-paper-plane"></i> Contact Me</h2>
+  <h2><span style="color:#5BC0BE; font-weight:bold;">09.</span> <i class="fas fa-paper-plane"></i> Contact Me</h2>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px auto; width: 60%;">
   <p>If you're interested in collaborating on data analytics, hiring for business intelligence projects, or simply discussing data-driven solutions — I'd love to hear from you.</p>
   <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="contact">
