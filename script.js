@@ -1,38 +1,58 @@
+// script.js
 
-// Toggle theme
-function toggleTheme() {
-  document.body.classList.toggle("light-mode");
+// Typing animation for hero title
+const text = "Rubina Ahmed Mahar";
+let index = 0;
+function type() {
+  document.getElementById("typing-text").innerText = text.slice(0, ++index);
+  if (index < text.length) setTimeout(type, 150);
 }
+window.onload = () => {
+  type();
 
-// Scroll to top
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
+  // Preloader hide if exists
+  const loader = document.getElementById("preloader");
+  if (loader) loader.style.display = "none";
+};
 
-// Preloader and fade-in effect
-window.addEventListener("load", () => {
-  const preloader = document.getElementById("preloader");
-  if (preloader) preloader.style.display = "none";
+// Scroll-based effects
+window.onscroll = () => {
+  const scroll = document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (scroll / height) * 100;
+  document.getElementById("progress-bar").style.width = scrolled + "%";
 
-  document.querySelectorAll(".fade-in").forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 50) {
+  document.querySelectorAll(".content").forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
       el.classList.add("visible");
     }
   });
+
+  const backToTop = document.getElementById("backToTop");
+  if (scroll > 300) {
+    backToTop.style.display = "block";
+  } else {
+    backToTop.style.display = "none";
+  }
+};
+
+// Keyboard shortcut for "Back to Top"
+document.addEventListener("keydown", (e) => {
+  if (e.key.toLowerCase() === "t") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 });
 
-// Handle scroll appearance
-window.addEventListener("scroll", () => {
-  document.querySelectorAll(".fade-in").forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 50) {
-      el.classList.add("visible");
-    }
-  });
+// Time-based greeting in console
+const hour = new Date().getHours();
+let greeting = "Welcome";
+if (hour < 12) greeting = "Good morning, Rubina!";
+else if (hour < 18) greeting = "Good afternoon, Rubina!";
+else greeting = "Good evening, Rubina!";
+console.log(greeting);
 
-  const scrollBtn = document.getElementById("scrollTopBtn");
-  if (scrollBtn) {
-    scrollBtn.style.display = window.scrollY > 100 ? "block" : "none";
-  }
+// Auto-update year in footer
+const year = new Date().getFullYear();
+document.querySelectorAll('footer').forEach(footer => {
+  footer.innerHTML = footer.innerHTML.replace(/\d{4}/, year);
 });
