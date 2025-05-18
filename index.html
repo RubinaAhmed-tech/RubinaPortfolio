@@ -292,35 +292,60 @@
     0%, 100% { opacity: 0; transform: translateX(-50px); }
     10%, 90% { opacity: 1; transform: translateX(0); }
   }
-  <script defer>
-    const text = "Rubina Ahmed Mahar";
-    let index = 0;
-    function type() {
-      document.getElementById("typing-text").innerText = text.slice(0, ++index);
-      if (index < text.length) setTimeout(type, 150);
-    }
-    window.onload = type;
+  <script>
+  const text = "Rubina Ahmed Mahar";
+  let index = 0;
+  function type() {
+    document.getElementById("typing-text").innerText = text.slice(0, ++index);
+    if (index < text.length) setTimeout(type, 150);
+  }
+  window.onload = () => {
+    type();
+    const theme = localStorage.getItem("theme");
+    if (theme === "light") document.body.classList.add("light-theme");
+    animateCounter("projectCount", 10);
+    animateCounter("internCount", 5);
+  };
 
-    window.onscroll = () => {
-      const scroll = document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (scroll / height) * 100;
-      document.getElementById("progress-bar").style.width = scrolled + "%";
-
-      document.querySelectorAll(".content").forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-          el.classList.add("visible");
-        }
-      });
-
-      const backToTop = document.getElementById("backToTop");
-      if (scroll > 300) {
-        backToTop.style.display = "block";
-      } else {
-        backToTop.style.display = "none";
+  window.onscroll = () => {
+    const scroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scroll / height) * 100;
+    document.getElementById("progress-bar").style.width = scrolled + "%";
+    document.querySelectorAll(".content").forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+        el.classList.add("visible");
       }
+    });
+    const backToTop = document.getElementById("backToTop");
+    backToTop.style.display = scroll > 300 ? "block" : "none";
+  };
+
+  function toggleTheme() {
+    document.body.classList.toggle("light-theme");
+    localStorage.setItem("theme", document.body.classList.contains("light-theme") ? "light" : "dark");
+  }
+
+  function animateCounter(id, end, speed = 50) {
+    let count = 0;
+    const update = () => {
+      count++;
+      document.getElementById(id).textContent = count;
+      if (count < end) setTimeout(update, speed);
+    };
+    update();
+  }
+
+  // Scroll-down icon visibility control
+  window.addEventListener("scroll", () => {
+    const scrollBtn = document.getElementById("scrollHint");
+    const aboutSection = document.getElementById("about");
+    if (scrollBtn && aboutSection) {
+      const sectionTop = aboutSection.getBoundingClientRect().top;
+      scrollBtn.style.opacity = sectionTop < 100 ? "0" : "1";
     }
-  </script>
+  });
+</script>
 <script defer>
   const text = "Rubina Ahmed Mahar";
   let index = 0;
