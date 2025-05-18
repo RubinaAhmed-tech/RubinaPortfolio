@@ -1,3 +1,200 @@
 <!DOCTYPE html>
-<!-- trimmed content to fit into portfolio/index.html -->
-<html><head><title>Rubina Portfolio</title><link rel="stylesheet" href="style.css"></head><body><h1>Rubina Portfolio</h1><img src="assets/Rubina_random.png" alt="Rubina"><p>This is a placeholder for the full HTML content.</p></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rubina Ahmed Mahar | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: #A64D79;
+      width: 0%;
+      z-index: 1000;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #6A1E55;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 20px;
+      text-decoration: none;
+      display: none;
+    }
+    .content {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.6s ease-out;
+    }
+    .content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #1A1A1D;
+      padding: 10px;
+      z-index: 999;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .social-links a {
+      margin: 10px;
+      font-size: 20px;
+      color: #A64D79;
+    }
+  </style>
+  <script defer>
+    const text = "Rubina Ahmed Mahar";
+    let index = 0;
+    function type() {
+      document.getElementById("typing-text").innerText = text.slice(0, ++index);
+      if (index < text.length) setTimeout(type, 150);
+    }
+    window.onload = type;
+
+    window.onscroll = () => {
+      const scroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (scroll / height) * 100;
+      document.getElementById("progress-bar").style.width = scrolled + "%";
+
+      document.querySelectorAll(".content").forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+          el.classList.add("visible");
+        }
+      });
+
+      const backToTop = document.getElementById("backToTop");
+      if (scroll > 300) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <nav>
+    <a href="#about"><i class="fas fa-user"></i> About</a>
+    <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
+    <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
+    <a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a>
+    <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+    <a href="#why"><i class="fas fa-star"></i> Why Me</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h1 id="typing-text"></h1>
+    <img src="Rubina_random.png" alt="Rubina Ahmed Mahar" class="profile-pic">
+    <a href="#about" class="scroll-down">↓ Scroll</a>
+  </section>
+
+  <section id="about" class="content">
+    <h2><i class="fas fa-user-circle"></i> About Me</h2>
+    <p>I’m Rubina Ahmed Mahar, a BBA student passionate about data science and analytics. I thrive on turning raw data into strategic insights using tools like Python, SQL, Excel, and Power BI.</p>
+  </section>
+
+  <section id="experience" class="content">
+    <h2><i class="fas fa-briefcase"></i> Experience</h2>
+    <ul>
+      <li>Oigetit.ai – Software QA Analyst (2024)</li>
+      <li>Prodigy InfoTech – Data Science Intern (2024)</li>
+      <li>SYNC INTERN’S – DS & AI Intern (2024)</li>
+      <li>AI Data Yard – Marketing Intern (2023)</li>
+      <li>Paklaunch – Campus Ambassador (2023)</li>
+      <li>GAOTek Inc. – Business Dev Intern (2023)</li>
+    </ul>
+  </section>
+
+  <section id="certifications" class="content">
+    <h2><i class="fas fa-certificate"></i> Certifications</h2>
+    <div class="cert-grid">
+      <div>
+        <h3>Core Certifications</h3>
+        <ul>
+          <li>Google Data Analytics – Coursera</li>
+          <li>Data Analyst Associate – DataCamp</li>
+          <li>Programming for Everybody – Univ. of Michigan</li>
+          <li>SQL for Data Analysis – MySQL BI</li>
+          <li>Excel for Analysts – Codecademy</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Special Certifications</h3>
+        <ul>
+          <li>CompTIA Data+ – 2025</li>
+          <li>McKinsey Forward Program – 2024</li>
+          <li>CS50 Python – Harvard</li>
+          <li>LUMS DS Specialization</li>
+          <li>Python 101 – IBM</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="content">
+    <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+    <ul>
+      <li>Suicide Rate EDA</li>
+      <li>Youth Unemployment</li>
+      <li>Netflix Analysis</li>
+      <li>FoodHub Data</li>
+      <li>Pharma Dashboard</li>
+    </ul>
+  </section>
+
+  <section id="why" class="content">
+    <h2><i class="fas fa-star"></i> Why Choose Me</h2>
+    <ul>
+      <li>Certified across leading platforms</li>
+      <li>Practical experience with real datasets</li>
+      <li>Strategic, business-driven thinker</li>
+      <li>Professional communication skills</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="content">
+    <h2><i class="fas fa-paper-plane"></i> Contact Me</h2>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p hidden>
+        <label>Don’t fill this out: <input name="bot-field" /></label>
+      </p>
+      <input type="text" name="name" placeholder="Your Name" required><br>
+      <input type="email" name="email" placeholder="Your Email" required><br>
+      <textarea name="message" placeholder="Your Message" required></textarea><br>
+      <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
+    </form>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/rubina-ahmed-mahar-b03b39220" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/RubinaAhmed-tech" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="mailto:rubinaahmed301@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </section>
+
+  <a href="#" id="backToTop" class="back-to-top" aria-label="Back to Top">↑</a>
+
+  <footer class="footer">
+    <p>&copy; 2025 Rubina Ahmed Mahar. Built with ❤️ and GitHub Pages.</p>
+  </footer>
+</body>
+</html>
