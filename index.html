@@ -7,59 +7,121 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    #progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 5px;
-      background: #A64D79;
-      width: 0%;
-      z-index: 1000;
-    }
-    .back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #6A1E55;
-      color: white;
-      padding: 10px;
-      border-radius: 50%;
-      font-size: 20px;
-      text-decoration: none;
-      display: none;
-    }
-    .content {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.6s ease-out;
-    }
-    .content.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      background-color: #1A1A1D;
-      padding: 10px;
-      z-index: 999;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .social-links a {
-      margin: 10px;
-      font-size: 20px;
-      color: #A64D79;
-    }
-  </style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #1c1a29;
+    color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  #progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: #D4AF37; /* Royal gold */
+    width: 0%;
+    z-index: 1000;
+  }
+  .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #7b3f00; /* Royal bronze */
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    display: none;
+  }
+  .content {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+  .content.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    background-color: #2a2438; /* Deep royal purple */
+    padding: 10px;
+    z-index: 999;
+    text-align: center;
+  }
+  nav a {
+    color: #f5f5f5;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  nav a:hover {
+    color: #D4AF37; /* Royal gold */
+  }
+  .social-links a {
+    margin: 10px;
+    font-size: 20px;
+    color: #D4AF37;
+  }
+  h2, h3 {
+    color: #D4AF37;
+    text-align: center;
+  }
+  .hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(90deg, #2a2438, #4b3c63);
+  }
+  .profile-pic {
+    border-radius: 50%;
+    border: 4px solid #f5f5f5;
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    object-fit: cover;
+  }
+  .scroll-down {
+    display: inline-block;
+    margin-top: 20px;
+    color: #f5f5f5;
+    font-size: 18px;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+  }
+  button {
+    background-color: #7b3f00;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  button:hover {
+    background-color: #D4AF37;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2a2438;
+    color: #ffffff;
+  }
+</style>
   <script defer>
     const text = "Rubina Ahmed Mahar";
     let index = 0;
@@ -109,87 +171,97 @@
   </section>
 
   <section id="about" class="content">
-    <h2><i class="fas fa-user-circle"></i> About Me</h2>
-    <p>I’m Rubina Ahmed Mahar, a BBA student passionate about data science and analytics. I thrive on turning raw data into strategic insights using tools like Python, SQL, Excel, and Power BI.</p>
-  </section>
+  <h2><i class="fas fa-user-circle"></i> About Me</h2>
+  <p>I’m Rubina Ahmed Mahar, a BBA student at Iqra University with a passion for data science and business analytics. I specialize in turning complex data into actionable insights using tools like Python, SQL, Excel, Power BI, and SPSS. My foundation in business studies gives me a unique edge in understanding both the technical and strategic sides of data-driven decision making.</p>
+  <p>My journey has been enriched through research on Corporate Social Responsibility, various internship roles, and hands-on projects analyzing global datasets. I thrive in environments where collaboration, problem-solving, and innovation meet. Whether it’s evaluating customer satisfaction or forecasting trends, I bring enthusiasm and precision to every challenge.</p>
+</section>
 
   <section id="experience" class="content">
-    <h2><i class="fas fa-briefcase"></i> Experience</h2>
-    <ul>
-      <li>Oigetit.ai – Software QA Analyst (2024)</li>
-      <li>Prodigy InfoTech – Data Science Intern (2024)</li>
-      <li>SYNC INTERN’S – DS & AI Intern (2024)</li>
-      <li>AI Data Yard – Marketing Intern (2023)</li>
-      <li>Paklaunch – Campus Ambassador (2023)</li>
-      <li>GAOTek Inc. – Business Dev Intern (2023)</li>
-    </ul>
-  </section>
+  <h2><i class="fas fa-briefcase"></i> Experience</h2>
+  <p>Throughout my academic and early professional journey, I've actively pursued opportunities that help me apply my skills in real-world environments. These experiences have equipped me with practical knowledge and strengthened my ability to work in cross-functional teams, communicate insights effectively, and drive impactful outcomes.</p>
+  <p>I've worked as a QA Analyst at Oigetit.ai ensuring digital product quality, conducted data-driven visualizations during my internship at Prodigy InfoTech, and built plant disease prediction models during my AI internship at SYNC. Additionally, I engaged in market and strategy research at AI Data Yard and GAOTek Inc., while also serving as a student ambassador for Paklaunch to promote tech-driven learning communities.</p>
+  <ul>
+    <li>Oigetit.ai – Software QA Analyst (2024)</li>
+    <li>Prodigy InfoTech – Data Science Intern (2024)</li>
+    <li>SYNC INTERN’S – DS & AI Intern (2024)</li>
+    <li>AI Data Yard – Marketing Intern (2023)</li>
+    <li>Paklaunch – Campus Ambassador (2023)</li>
+    <li>GAOTek Inc. – Business Dev Intern (2023)</li>
+  </ul>
+</section>
 
   <section id="certifications" class="content">
-    <h2><i class="fas fa-certificate"></i> Certifications</h2>
-    <div class="cert-grid">
-      <div>
-        <h3>Core Certifications</h3>
-        <ul>
-          <li>Google Data Analytics – Coursera</li>
-          <li>Data Analyst Associate – DataCamp</li>
-          <li>Programming for Everybody – Univ. of Michigan</li>
-          <li>SQL for Data Analysis – MySQL BI</li>
-          <li>Excel for Analysts – Codecademy</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Special Certifications</h3>
-        <ul>
-          <li>CompTIA Data+ – 2025</li>
-          <li>McKinsey Forward Program – 2024</li>
-          <li>CS50 Python – Harvard</li>
-          <li>LUMS DS Specialization</li>
-          <li>Python 101 – IBM</li>
-        </ul>
-      </div>
+  <h2><i class="fas fa-certificate"></i> Certifications</h2>
+  <p>I’ve completed a wide range of certifications from top institutions and learning platforms that have helped me build a solid foundation in data analysis, programming, and business intelligence. These credentials reflect both my technical expertise and my commitment to lifelong learning.</p>
+  <p>My certifications span across practical tools like SQL, Python, Excel, and Power BI, as well as advanced business and strategy programs such as McKinsey Forward and CompTIA Data+. Each program has empowered me with industry-relevant skills that I apply directly in my projects and professional roles.</p>
+  <div class="cert-grid">
+    <div>
+      <h3>Core Certifications</h3>
+      <ul>
+        <li>Google Data Analytics – Coursera</li>
+        <li>Data Analyst Associate – DataCamp</li>
+        <li>Programming for Everybody – Univ. of Michigan</li>
+        <li>SQL for Data Analysis – MySQL BI</li>
+        <li>Excel for Analysts – Codecademy</li>
+      </ul>
     </div>
-  </section>
+    <div>
+      <h3>Special Certifications</h3>
+      <ul>
+        <li>CompTIA Data+ – 2025</li>
+        <li>McKinsey Forward Program – 2024</li>
+        <li>CS50 Python – Harvard</li>
+        <li>LUMS DS Specialization</li>
+        <li>Python 101 – IBM</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
   <section id="projects" class="content">
-    <h2><i class="fas fa-project-diagram"></i> Projects</h2>
-    <ul>
-      <li>Suicide Rate EDA</li>
-      <li>Youth Unemployment</li>
-      <li>Netflix Analysis</li>
-      <li>FoodHub Data</li>
-      <li>Pharma Dashboard</li>
-    </ul>
-  </section>
+  <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+  <p>My project portfolio reflects a variety of analytical challenges — from uncovering social patterns to optimizing business decisions. I use Python, SQL, and visualization tools to bring clarity to complex data and tell compelling stories.</p>
+  <p>Highlights include an EDA on global suicide trends across age and gender, a youth unemployment visualization exploring international labor disparities, and dashboards for Netflix viewing trends, food delivery habits, and pharmaceutical sales insights.</p>
+  <ul>
+    <li>Suicide Rate EDA</li>
+    <li>Youth Unemployment</li>
+    <li>Netflix Analysis</li>
+    <li>FoodHub Data</li>
+    <li>Pharma Dashboard</li>
+  </ul>
+</section>
 
   <section id="why" class="content">
-    <h2><i class="fas fa-star"></i> Why Choose Me</h2>
-    <ul>
-      <li>Certified across leading platforms</li>
-      <li>Practical experience with real datasets</li>
-      <li>Strategic, business-driven thinker</li>
-      <li>Professional communication skills</li>
-    </ul>
-  </section>
+  <h2><i class="fas fa-star"></i> Why Choose Me</h2>
+  <p>As someone who bridges the gap between business strategy and data science, I bring a unique mix of analytical precision and big-picture thinking. I thrive in environments that require innovation, curiosity, and collaborative problem solving.</p>
+  <p>I'm continuously upskilling through industry-certified programs and real-world projects. I bring enthusiasm, structure, and strong ethics to every role. Whether it’s contributing insights, writing reports, or leading initiatives — I’m ready to make a difference.</p>
+  <ul>
+    <li>Certified across leading platforms</li>
+    <li>Practical experience with real datasets</li>
+    <li>Strategic, business-driven thinker</li>
+    <li>Professional communication skills</li>
+  </ul>
+</section>
 
   <section id="contact" class="content">
-    <h2><i class="fas fa-paper-plane"></i> Contact Me</h2>
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contact">
-      <p hidden>
-        <label>Don’t fill this out: <input name="bot-field" /></label>
-      </p>
-      <input type="text" name="name" placeholder="Your Name" required><br>
-      <input type="email" name="email" placeholder="Your Email" required><br>
-      <textarea name="message" placeholder="Your Message" required></textarea><br>
-      <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
-    </form>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/rubina-ahmed-mahar-b03b39220" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/RubinaAhmed-tech" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="mailto:rubinaahmed301@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-    </div>
-  </section>
+  <h2><i class="fas fa-paper-plane"></i> Contact Me</h2>
+  <p>If you're interested in collaborating, hiring, or simply discussing data and business ideas — I'd love to hear from you. I'm always open to new opportunities and meaningful conversations.</p>
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    <p hidden>
+      <label>Don’t fill this out: <input name="bot-field" /></label>
+    </p>
+    <input type="text" name="name" placeholder="Your Name" required><br>
+    <input type="email" name="email" placeholder="Your Email" required><br>
+    <textarea name="message" placeholder="Your Message" required></textarea><br>
+    <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
+  </form>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/rubina-ahmed-mahar-b03b39220" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/RubinaAhmed-tech" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="mailto:rubinaahmed301@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  </div>
+</section>
 
   <a href="#" id="backToTop" class="back-to-top" aria-label="Back to Top">↑</a>
 
@@ -198,3 +270,4 @@
   </footer>
 </body>
 </html>
+
