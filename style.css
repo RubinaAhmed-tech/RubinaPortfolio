@@ -1,46 +1,51 @@
 /* style.css */
 
 body {
-  background-color: #1A1A1D;
-  color: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #001f3f;
+  color: #F8F8F2;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 h1, h2, h3 {
-  color: #A64D79;
+  color: #7FDBFF;
 }
 
 section {
-  padding: 50px 20px;
-  max-width: 900px;
-  margin: auto;
+  padding: 60px 30px;
+  max-width: 1000px;
+  margin: 60px auto;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  text-align: center;
 }
 
 nav {
-  background-color: #3B1C32;
+  background-color: #003366;
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
+  padding: 20px 0;
 }
 
 nav a {
-  color: #ffffff;
+  color: #64ffda;
   text-decoration: none;
   margin: 0 15px;
   font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #A64D79;
+  color: #39CCCC;
 }
 
 .hero {
   text-align: center;
   padding: 100px 20px;
-  background: linear-gradient(90deg, #3B1C32, #6A1E55);
+  background: linear-gradient(90deg, #001f3f, #0074D9);
 }
 
 .profile-pic {
@@ -49,33 +54,40 @@ nav a:hover {
   width: 150px;
   height: 150px;
   margin-top: 20px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 
 .scroll-down {
   display: inline-block;
   margin-top: 20px;
-  color: #ffffff;
+  color: #64ffda;
   font-size: 18px;
 }
 
 .cert-grid {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 40px;
+  gap: 30px;
+  margin-top: 20px;
 }
 
 .cert-grid div {
-  flex: 1;
+  flex: 1 1 45%;
+  text-align: left;
+  color: #F8F8F2;
 }
 
 ul {
   list-style: none;
   padding-left: 0;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
 }
 
 ul li::before {
   content: '\2022';
-  color: #A64D79;
+  color: #64ffda;
   display: inline-block;
   width: 1em;
   margin-left: -1em;
@@ -87,38 +99,48 @@ input, textarea {
   margin: 10px 0;
   border-radius: 5px;
   border: none;
+  background: #112240;
+  color: #F8F8F2;
 }
 
 button {
-  background-color: #6A1E55;
-  color: white;
+  background-color: #7FDBFF;
+  color: #0A192F;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #A64D79;
+  background-color: #39CCCC;
 }
 
 .footer {
   text-align: center;
   padding: 20px;
-  background-color: #3B1C32;
-  color: #ffffff;
+  background-color: #112240;
+  color: #F8F8F2;
 }
 
 .social-links a {
-  color: #ffffff;
+  color: #64ffda;
   margin: 0 10px;
   font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #52e0c4;
 }
 
 blockquote {
-  background: #2a2a2d;
+  background: #112240;
   padding: 15px 20px;
-  border-left: 4px solid #A64D79;
+  border-left: 4px solid #7FDBFF;
   margin: 20px 0;
   font-style: italic;
 }
