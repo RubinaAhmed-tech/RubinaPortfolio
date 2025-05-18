@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rubina Ahmed Mahar | Portfolio</title>
@@ -62,9 +62,9 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: #14121f;
-    color: #f3e8ff;
-    font-family: 'Playfair Display', serif;
+    background-color: #1A1C2C;
+    color: #F5F7FA;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
   }
@@ -128,6 +128,8 @@
     transform: translateY(20px);
     animation: fadeUp 0.8s ease-out forwards;
     animation-delay: 0.3s;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
   }
 
   @keyframes fadeUp {
@@ -146,9 +148,13 @@
     text-align: center;
   }
   .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(90deg, #2a2438, #4b3c63);
+    background: linear-gradient(120deg, #2f2e41, #46344e);
   }
   .profile-pic {
     border-radius: 50%;
@@ -332,12 +338,7 @@
     <li><i class="fas fa-chart-bar"></i> Power BI <div class="bar"><div style="width:75%">75%</div></div></li>
     <li><i class="fas fa-code"></i> HTML/CSS <div class="bar"><div style="width:88%">88%</div></div></li>
     <li><i class="fas fa-brain"></i> Data Analysis <div class="bar"><div style="width:92%">92%</div></div></li>
-    <li><i class="fab fa-python"></i> Python</li>
-    <li><i class="fas fa-database"></i> SQL</li>
-    <li><i class="fas fa-file-excel"></i> Excel</li>
-    <li><i class="fas fa-chart-bar"></i> Power BI</li>
-    <li><i class="fas fa-code"></i> HTML/CSS</li>
-    <li><i class="fas fa-brain"></i> Data Analysis</li>
+    
   </ul>
 <div class="counter-box" style="text-align:center;">
   <i class="fas fa-project-diagram" style="font-size:24px;color:#b98eff;"></i>
@@ -430,14 +431,14 @@ setInterval(() => {
 <section id="projects" class="content">
   <h2><i class="fas fa-project-diagram"></i> Projects</h2>
   <p>My project portfolio reflects a variety of analytical challenges — from uncovering social patterns to optimizing business decisions. I use Python, SQL, and visualization tools to bring clarity to complex data and tell compelling stories.</p>
-  <p>Highlights include an EDA on global suicide trends across age and gender, a youth unemployment visualization exploring international labor disparities, and dashboards for Netflix viewing trends, food delivery habits, and pharmaceutical sales insights.</p>
   <ul>
-    <li><i class="fas fa-chart-line"></i> Suicide Rate EDA</li>
-    <li><i class="fas fa-users"></i> Youth Unemployment</li>
-    <li><i class="fas fa-film"></i> Netflix Analysis</li>
-    <li><i class="fas fa-hamburger"></i> FoodHub Data</li>
-    <li><i class="fas fa-prescription-bottle-alt"></i> Pharma Dashboard</li>
+    <li><i class="fas fa-chart-line"></i> <strong>Suicide Rate EDA</strong><br><small>Analyzed global suicide data by gender, age, and country using Python and visualizations to identify critical mental health trends.</small></li>
+    <li><i class="fas fa-users"></i> <strong>Youth Unemployment Analysis</strong><br><small>Created an interactive notebook to explore youth unemployment across regions, uncovering socioeconomic drivers using data wrangling and plots.</small></li>
+    <li><i class="fas fa-film"></i> <strong>Netflix Show Dashboard</strong><br><small>Cleaned and visualized Netflix's dataset in Python to analyze genre distribution, show trends, and content popularity using seaborn and matplotlib.</small></li>
+    <li><i class="fas fa-hamburger"></i> <strong>FoodHub Sales Insights</strong><br><small>Used SQL and Excel to examine food delivery patterns, customer demographics, and order performance for strategic decision-making.</small></li>
+    <li><i class="fas fa-prescription-bottle-alt"></i> <strong>Pharma Sales Dashboard</strong><br><small>Built a dynamic Power BI dashboard to track pharmaceutical sales KPIs, regional performance, and monthly trends.</small></li>
   </ul>
+</section>
 </section>
 
   <section id="why" class="content">
