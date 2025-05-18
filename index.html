@@ -64,8 +64,8 @@
   }
   body {
   background-color: #0B132B;
-  color: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #5BC0BE;
+  font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
   }
@@ -96,7 +96,7 @@
     transform: translateY(0);
   }
   nav {
-  background-color: #1C2541;
+  background-color: #0B132B;
     padding: 10px;
     z-index: 999;
     text-align: center;
@@ -307,14 +307,15 @@
 }
 
   .animated-section {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.6s ease-out;
-  }
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: transform, opacity;
+}
   .animated-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 </style>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
@@ -338,9 +339,9 @@
   <h1 id="typing-text" style="font-size: 3em; color: #ffffff; font-weight: 800; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></h1>
   <h3 style="color: #D4AF37; font-size: 1.3em; margin-bottom: 30px; font-style: italic;">Data Analyst | Business Strategist</h3>
   <img src="Rubina_random.png" alt="Rubina Ahmed Mahar" class="profile-pic" style="box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); margin-bottom: 30px;">
-  <a href="rubina_ahmed_mahar_resume_2025.pdf" download style="display:inline-block; margin-bottom: 40px; padding:12px 24px; background: linear-gradient(135deg, #5BC0BE, #3A506B); color:#fff; text-decoration:none; border-radius:30px; font-weight:bold; font-size: 16px; box-shadow: 0 6px 12px rgba(0,0,0,0.3);">Download Resume</a>
+  <a href="/mnt/data/rubina_ahmed_mahar_resume_2025.pdf" target="_blank" title="View my resume" style="display:inline-block; margin-bottom: 40px; padding:12px 24px; background: linear-gradient(135deg, #5BC0BE, #3A506B); color:#fff; text-decoration:none; border-radius:30px; font-weight:bold; font-size: 16px; box-shadow: 0 6px 12px rgba(0,0,0,0.3);">Download Resume</a>
   <blockquote style="font-style: italic; color: #c2b7ff; max-width: 600px; margin: 1em auto; font-size: 1.1em;">“Turning curiosity into capability, and data into direction.”</blockquote>
-  <h2><span style="color:#5BC0BE; font-weight:bold;">0$1.</span> <i class="fas fa-user-circle"></i> About Me</h2>
+  <h2><i class="fas fa-user-circle"></i> About Me</h2>
 <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px auto; width: 60%;">
   <p>I’m Rubina Ahmed Mahar, a BBA student at Iqra University with a passion for data science and business analytics. I specialize in turning complex data into actionable insights using tools like Python, SQL, Excel, Power BI, and SPSS. My foundation in business studies gives me a unique edge in understanding both the technical and strategic sides of data-driven decision making.</p>
   <p>My journey has been enriched through research on Corporate Social Responsibility, various internship roles, and hands-on projects analyzing global datasets. I thrive in environments where collaboration, problem-solving, and innovation meet. Whether it’s evaluating customer satisfaction or forecasting trends, I bring enthusiasm and precision to every challenge.</p>
@@ -363,7 +364,7 @@
   
 </div>
 <section id="experience" class="content" style="text-align: justify;">
-  <h2><span style="color:#5BC0BE; font-weight:bold;">03.</span> <i class="fas fa-briefcase"></i> Experience</h2>
+  <h2><i class="fas fa-briefcase"></i> Experience</h2>
 <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px auto; width: 60%;">
   <p>Throughout my academic and early professional journey, I've actively pursued opportunities that help me apply my skills in real-world environments. These experiences have equipped me with practical knowledge and strengthened my ability to work in cross-functional teams, communicate insights effectively, and drive impactful outcomes.</p>
   <p>I've worked as a QA Analyst at Oigetit.ai ensuring digital product quality, conducted data-driven visualizations during my internship at Prodigy InfoTech, and built plant disease prediction models during my AI internship at SYNC. Additionally, I engaged in market and strategy research at AI Data Yard and GAOTek Inc., while also serving as a student ambassador for Paklaunch to promote tech-driven learning communities.</p>
@@ -378,7 +379,7 @@
 </section>
 
   <section id="certifications" class="content" style="text-align: justify;">
-  <h2><span style="color:#5BC0BE; font-weight:bold;">04.</span> <i class="fas fa-certificate"></i> Certifications</h2>
+  <h2><i class="fas fa-certificate"></i> Certifications</h2>
 <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px auto; width: 60%;">
   <p>I’ve completed a wide range of certifications from top institutions and learning platforms that have helped me build a solid foundation in data analysis, programming, and business intelligence. These credentials reflect both my technical expertise and my commitment to lifelong learning.</p>
   <p>My certifications span across practical tools like SQL, Python, Excel, and Power BI, as well as advanced business and strategy programs such as McKinsey Forward and CompTIA Data+. Each program has empowered me with industry-relevant skills that I apply directly in my projects and professional roles.</p>
@@ -388,11 +389,32 @@
       <ul>
         <li>Google Data Analytics – Coursera</li>
         <li>Data Analyst Associate – DataCamp</li>
-        <li>Programming for Everybody – Univ. of Michigan</li>
+        <li>Programming for Everybody – University of Michigan</li>
         <li>SQL for Data Analysis – MySQL BI</li>
         <li>Excel for Analysts – Codecademy</li>
+        <li>Python for Data Science – Cognitive Class</li>
+        <li>Data Science Orientation – IBM</li>
+        <li>Power BI Fundamentals – Udemy</li>
+        <li>Python Project for Data Science – Coursera</li>
+        <li>Advanced Excel – LinkedIn Learning</li>
       </ul>
     </div>
+    <div>
+      <h3>Special Certifications</h3>
+      <ul>
+        <li>CompTIA Data+ – 2025</li>
+        <li>McKinsey Forward Program – 2024</li>
+        <li>CS50 Python – Harvard</li>
+        <li>LUMS Data Science Specialization</li>
+        <li>Python 101 – IBM</li>
+        <li>Data Analysis with Python – Coursera</li>
+        <li>Data Visualization with Python – Coursera</li>
+        <li>Business Analytics – Wharton Online</li>
+        <li>Machine Learning Foundations – AWS</li>
+        <li>Introduction to AI – Google Cloud</li>
+      </ul>
+    </div>
+  </div>
     <div>
       <h3>Special Certifications</h3>
       <ul>
@@ -488,11 +510,7 @@ setInterval(() => {
 </svg>
 
   
-    <div class="project-card">
-      <i class="fas fa-desktop"></i>
-      <h3>Portfolio & Resume Design</h3>
-      <p>Craft modern, responsive personal websites or data-centric CVs that leave a strong digital impression.</p>
-    </div>
+    
   </div>
 </section>
 
@@ -516,7 +534,7 @@ setInterval(() => {
 
   <svg viewBox="0 0 1440 100" style="display:block" xmlns="http://www.w3.org/2000/svg"><path fill="#2f2e41" d="M0,0L80,5.3C160,11,320,21,480,32C640,43,800,53,960,69.3C1120,85,1280,107,1360,117.3L1440,128V0H1360C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0H0Z"></path></svg>
 <section id="contact" class="content" style="text-align: justify;">
-  <h2><span style="color:#5BC0BE; font-weight:bold;">09.</span> <i class="fas fa-paper-plane"></i> Contact Me</h2>
+  <h2><i class="fas fa-paper-plane"></i> Contact Me</h2>
 <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px auto; width: 60%;">
   <p>If you're interested in collaborating on data analytics, hiring for business intelligence projects, or simply discussing data-driven solutions — I'd love to hear from you.</p>
   <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
@@ -541,7 +559,7 @@ setInterval(() => {
   <footer class="footer">
     <p>&copy; 2025 Rubina Ahmed Mahar. Built with ❤️ and GitHub Pages.</p>
   </footer>
-  <a href="#about" class="scroll-down" title="Jump to About" id="scrollHint" style="position: fixed; bottom: 80px; right: 30px; background: linear-gradient(135deg, #9f7aea, #805ad5); color: white; padding: 12px 14px; border-radius: 50%; font-size: 18px; text-decoration: none; z-index: 1000; box-shadow: 0 6px 12px rgba(0,0,0,0.3); animation: pulse 1.5s infinite; transition: opacity 0.3s ease;">
+  <a href="#about" class="scroll-down" title="Jump to About" id="scrollHint" style="position: fixed; bottom: 80px; right: 30px; background: linear-gradient(135deg, #5BC0BE, #3A506B); color: white; padding: 12px 14px; border-radius: 50%; font-size: 18px; text-decoration: none; z-index: 1000; box-shadow: 0 6px 12px rgba(0,0,0,0.3); animation: pulse 1.5s infinite; transition: opacity 0.3s ease;">
   <i class="fas fa-angle-down"></i>
 </a>
 
@@ -615,7 +633,7 @@ setInterval(() => {
   }
   .bar > div {
     height: 100%;
-    background: linear-gradient(90deg, #9f7aea, #805ad5);
+    background: linear-gradient(90deg, #5BC0BE, #3A506B);
     color: #fff;
     font-size: 10px;
     text-align: right;
