@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rubina Ahmed Mahar | Portfolio</title>
@@ -11,9 +12,9 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: #1c1a29;
-    color: #f5f5f5;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #14121f;
+    color: #f3e8ff;
+    font-family: 'Playfair Display', serif;
     margin: 0;
     padding: 0;
   }
@@ -22,7 +23,7 @@
     top: 0;
     left: 0;
     height: 5px;
-    background: #D4AF37; /* Royal gold */
+    background: #b98eff;
     width: 0%;
     z-index: 1000;
   }
@@ -53,7 +54,7 @@
   nav {
     position: sticky;
     top: 0;
-    background-color: #2a2438; /* Deep royal purple */
+    background-color: #2d1e48;
     padding: 10px;
     z-index: 999;
     text-align: center;
@@ -65,7 +66,7 @@
     font-weight: bold;
   }
   nav a:hover {
-    color: #D4AF37; /* Royal gold */
+    color: #b98eff;
   }
   .social-links a {
     margin: 10px;
@@ -73,7 +74,7 @@
     color: #D4AF37;
   }
   h2, h3 {
-    color: #D4AF37;
+    color: #b98eff;
     text-align: center;
   }
   .hero {
@@ -118,8 +119,49 @@
   .footer {
     text-align: center;
     padding: 20px;
-    background-color: #2a2438;
-    color: #ffffff;
+    background-color: #2d1e48;
+    color: #f3e8ff;
+  }
+  .theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    color: #f3e8ff;
+    border: 2px solid #b98eff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    font-size: 14px;
+  }
+  .light-theme {
+    background-color: #f9f9ff;
+    color: #1c1a2e;
+  }
+  .light-theme nav {
+    background-color: #ece9f1;
+  }
+  .light-theme .hero {
+    background: linear-gradient(90deg, #dad4e5, #e8e1f0);
+    color: #1c1a2e;
+  }
+  .light-theme h2, .light-theme h3 {
+    color: #6a4fbf;
+  }
+  .light-theme nav a {
+    color: #1c1a2e;
+  }
+  .light-theme nav a:hover {
+    color: #6a4fbf;
+  }
+  .light-theme button {
+    background-color: #6a4fbf;
+    color: white;
+  }
+  .light-theme .footer {
+    background-color: #ece9f1;
+    color: #1c1a2e;
   }
 </style>
   <script defer>
@@ -151,8 +193,41 @@
       }
     }
   </script>
+<script defer>
+  const text = "Rubina Ahmed Mahar";
+  let index = 0;
+  function type() {
+    document.getElementById("typing-text").innerText = text.slice(0, ++index);
+    if (index < text.length) setTimeout(type, 150);
+  }
+  window.onload = () => {
+    type();
+    const theme = localStorage.getItem("theme");
+    if (theme === "light") document.body.classList.add("light-theme");
+  };
+  window.onscroll = () => {
+    const scroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scroll / height) * 100;
+    document.getElementById("progress-bar").style.width = scrolled + "%";
+    document.querySelectorAll(".content").forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+        el.classList.add("visible");
+      }
+    });
+    const backToTop = document.getElementById("backToTop");
+    backToTop.style.display = scroll > 300 ? "block" : "none";
+  };
+  function toggleTheme() {
+    document.body.classList.toggle("light-theme");
+    localStorage.setItem("theme", document.body.classList.contains("light-theme") ? "light" : "dark");
+  }
+</script>
 </head>
 <body>
+  <button class="theme-toggle" onclick="toggleTheme()">
+    Toggle Theme
+  </button>
   <div id="progress-bar"></div>
   <nav>
     <a href="#about"><i class="fas fa-user"></i> About</a>
@@ -171,6 +246,7 @@
   </section>
 
   <section id="about" class="content">
+  <p><em>Welcome to my portfolio! This space reflects my personal journey through business education and data science exploration, and the creative curiosity that fuels my work.</em></p>
   <h2><i class="fas fa-user-circle"></i> About Me</h2>
   <p>I’m Rubina Ahmed Mahar, a BBA student at Iqra University with a passion for data science and business analytics. I specialize in turning complex data into actionable insights using tools like Python, SQL, Excel, Power BI, and SPSS. My foundation in business studies gives me a unique edge in understanding both the technical and strategic sides of data-driven decision making.</p>
   <p>My journey has been enriched through research on Corporate Social Responsibility, various internship roles, and hands-on projects analyzing global datasets. I thrive in environments where collaboration, problem-solving, and innovation meet. Whether it’s evaluating customer satisfaction or forecasting trends, I bring enthusiasm and precision to every challenge.</p>
@@ -244,6 +320,7 @@
 </section>
 
   <section id="contact" class="content">
+  <p><strong>Let’s connect and create something impactful together!</strong></p>
   <h2><i class="fas fa-paper-plane"></i> Contact Me</h2>
   <p>If you're interested in collaborating, hiring, or simply discussing data and business ideas — I'd love to hear from you. I'm always open to new opportunities and meaningful conversations.</p>
   <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
