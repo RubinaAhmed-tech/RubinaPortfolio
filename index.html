@@ -8,6 +8,56 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+  .testimonial {
+    display: none;
+  }
+  .testimonial.active {
+    display: block;
+  }
+  /* Modern section enhancements */
+  section {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    margin: 40px 20px;
+  }
+
+  /* Enhance buttons and icons */
+  button, .theme-toggle {
+    transition: all 0.3s ease;
+  }
+  button:hover, .theme-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Add divider under nav */
+  nav::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: linear-gradient(to right, #b98eff, transparent);
+    margin-top: 10px;
+  }
+
+  /* Add hover styles to list items */
+  li {
+    transition: background 0.3s ease;
+    padding: 4px 0;
+  }
+  li:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    padding-left: 10px;
+  }
+
+  /* Highlight scroll-down and back-to-top */
+  #scrollHint:hover, .back-to-top:hover {
+    background: linear-gradient(135deg, #805ad5, #9f7aea);
+    transform: scale(1.1);
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -73,6 +123,24 @@
     font-size: 20px;
     color: #D4AF37;
   }
+  h2, h3 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   h2, h3 {
     color: #b98eff;
     text-align: center;
@@ -163,7 +231,67 @@
     background-color: #ece9f1;
     color: #1c1a2e;
   }
-</style>
+  /* Animate hero profile picture */
+  .hero {
+    animation: fadeInHero 1.2s ease-in-out forwards;
+  }
+  .profile-pic {
+    animation: popIn 1s ease 0.5s forwards;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  @keyframes fadeInHero {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes popIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Card-style layout for project items */
+  #projects ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+  }
+  #projects li {
+  cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  #projects li:hover {
+    transform: translateY(-6px);
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Testimonials Carousel */
+  #testimonials {
+  text-align: center;
+  margin-top: 40px;
+  position: relative;
+  padding-bottom: 40px;
+}
+  .testimonial {
+    background-color: rgba(255, 255, 255, 0.04);
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    font-style: italic;
+    animation: fadeSlide 8s infinite;
+  }
+  @keyframes fadeSlide {
+    0%, 100% { opacity: 0; transform: translateX(-50px); }
+    10%, 90% { opacity: 1; transform: translateX(0); }
+  }
   <script defer>
     const text = "Rubina Ahmed Mahar";
     let index = 0;
@@ -222,7 +350,32 @@
     document.body.classList.toggle("light-theme");
     localStorage.setItem("theme", document.body.classList.contains("light-theme") ? "light" : "dark");
   }
+  // Scroll-down icon visibility control
+  window.addEventListener("scroll", () => {
+    const scrollBtn = document.getElementById("scrollHint");
+    const aboutSection = document.getElementById("about");
+    if (scrollBtn && aboutSection) {
+      const sectionTop = aboutSection.getBoundingClientRect().top;
+      scrollBtn.style.opacity = sectionTop < 100 ? "0" : "1";
+    }
+  });
+
+<script>
+  function animateCounter(id, end, speed = 50) {
+    let count = 0;
+    const update = () => {
+      count++;
+      document.getElementById(id).textContent = count;
+      if (count < end) setTimeout(update, speed);
+    };
+    update();
+  }
+  window.addEventListener("load", () => {
+    animateCounter("projectCount", 10);
+    animateCounter("internCount", 5);
+  });
 </script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
   <button class="theme-toggle" onclick="toggleTheme()">
@@ -240,10 +393,10 @@
   </nav>
 
   <section class="hero">
-    <h1 id="typing-text"></h1>
-    <img src="Rubina_random.png" alt="Rubina Ahmed Mahar" class="profile-pic">
-    <a href="#about" class="scroll-down">↓ Scroll</a>
-  </section>
+  <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_touohxv0.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px; margin: auto;"  loop autoplay></lottie-player>
+  <h1 id="typing-text"></h1>
+  <img src="Rubina_random.png" alt="Rubina Ahmed Mahar" class="profile-pic">
+</section>
 
   <section id="about" class="content">
   <p><em>Welcome to my portfolio! This space reflects my personal journey through business education and data science exploration, and the creative curiosity that fuels my work.</em></p>
@@ -252,7 +405,26 @@
   <p>My journey has been enriched through research on Corporate Social Responsibility, various internship roles, and hands-on projects analyzing global datasets. I thrive in environments where collaboration, problem-solving, and innovation meet. Whether it’s evaluating customer satisfaction or forecasting trends, I bring enthusiasm and precision to every challenge.</p>
 </section>
 
-  <section id="experience" class="content">
+  $1
+    <li><i class="fab fa-python"></i> Python <div class="bar"><div style="width:90%">90%</div></div></li>
+    <li><i class="fas fa-database"></i> SQL <div class="bar"><div style="width:85%">85%</div></div></li>
+    <li><i class="fas fa-file-excel"></i> Excel <div class="bar"><div style="width:80%">80%</div></div></li>
+    <li><i class="fas fa-chart-bar"></i> Power BI <div class="bar"><div style="width:75%">75%</div></div></li>
+    <li><i class="fas fa-code"></i> HTML/CSS <div class="bar"><div style="width:88%">88%</div></div></li>
+    <li><i class="fas fa-brain"></i> Data Analysis <div class="bar"><div style="width:92%">92%</div></div></li>
+    <li><i class="fab fa-python"></i> Python</li>
+    <li><i class="fas fa-database"></i> SQL</li>
+    <li><i class="fas fa-file-excel"></i> Excel</li>
+    <li><i class="fas fa-chart-bar"></i> Power BI</li>
+    <li><i class="fas fa-code"></i> HTML/CSS</li>
+    <li><i class="fas fa-brain"></i> Data Analysis</li>
+  </ul>
+<div class="counter-box" style="text-align:center;">
+  <i class="fas fa-project-diagram" style="font-size:24px;color:#b98eff;"></i>
+  <div class="counter"><i class="fas fa-tasks"></i><br><span id="projectCount">0</span>+ Projects</div>
+  <div class="counter"><i class="fas fa-briefcase"></i><br><span id="internCount">0</span> Internships</div>
+</div>
+$1<section id="experience" class="content">
   <h2><i class="fas fa-briefcase"></i> Experience</h2>
   <p>Throughout my academic and early professional journey, I've actively pursued opportunities that help me apply my skills in real-world environments. These experiences have equipped me with practical knowledge and strengthened my ability to work in cross-functional teams, communicate insights effectively, and drive impactful outcomes.</p>
   <p>I've worked as a QA Analyst at Oigetit.ai ensuring digital product quality, conducted data-driven visualizations during my internship at Prodigy InfoTech, and built plant disease prediction models during my AI internship at SYNC. Additionally, I engaged in market and strategy research at AI Data Yard and GAOTek Inc., while also serving as a student ambassador for Paklaunch to promote tech-driven learning communities.</p>
@@ -292,18 +464,59 @@
       </ul>
     </div>
   </div>
+$1<section id="testimonials" class="content">
+  <h2><i class="fas fa-comment-dots"></i> Testimonials</h2>
+  <div class="testimonial">“Rubina brings strong data skills and sharp thinking to any team. Her attention to detail is unmatched.”</div>
+  <div class="testimonial">“A true professional in analytics and communication. Rubina’s dashboards are both insightful and stunning.”</div>
+  <div class="testimonial">“Her ability to turn complex data into strategic insights impressed everyone during our collaboration.”</div>
 </section>
+<script>
+  let currentTestimonial = 0;
+  const testimonials = document.querySelectorAll('.testimonial');
+  if (testimonials.length > 0) {
+    testimonials[0].classList.add('active');
+    function showTestimonial(index) {
+  testimonials.forEach((el, i) => {
+    el.classList.remove('active');
+    if (i === index) el.classList.add('active');
+  });
+  dots.forEach((dot, i) => {
+    dot.classList.remove('active-dot');
+    if (i === index) dot.classList.add('active-dot');
+  });
+}
 
-  <section id="projects" class="content">
+const dotsContainer = document.createElement('div');
+dotsContainer.className = 'testimonial-dots';
+testimonials.forEach((_, i) => {
+  const dot = document.createElement('span');
+  dot.className = 'testimonial-dot';
+  dot.addEventListener('click', () => {
+    currentTestimonial = i;
+    showTestimonial(currentTestimonial);
+  });
+  dotsContainer.appendChild(dot);
+});
+document.querySelector('#testimonials').appendChild(dotsContainer);
+const dots = document.querySelectorAll('.testimonial-dot');
+showTestimonial(currentTestimonial);
+
+setInterval(() => {
+  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+  showTestimonial(currentTestimonial);
+}, 5000);
+  }
+</script>
+<section id="projects" class="content">
   <h2><i class="fas fa-project-diagram"></i> Projects</h2>
   <p>My project portfolio reflects a variety of analytical challenges — from uncovering social patterns to optimizing business decisions. I use Python, SQL, and visualization tools to bring clarity to complex data and tell compelling stories.</p>
   <p>Highlights include an EDA on global suicide trends across age and gender, a youth unemployment visualization exploring international labor disparities, and dashboards for Netflix viewing trends, food delivery habits, and pharmaceutical sales insights.</p>
   <ul>
-    <li>Suicide Rate EDA</li>
-    <li>Youth Unemployment</li>
-    <li>Netflix Analysis</li>
-    <li>FoodHub Data</li>
-    <li>Pharma Dashboard</li>
+    <li><i class="fas fa-chart-line"></i> Suicide Rate EDA</li>
+    <li><i class="fas fa-users"></i> Youth Unemployment</li>
+    <li><i class="fas fa-film"></i> Netflix Analysis</li>
+    <li><i class="fas fa-hamburger"></i> FoodHub Data</li>
+    <li><i class="fas fa-prescription-bottle-alt"></i> Pharma Dashboard</li>
   </ul>
 </section>
 
@@ -345,6 +558,99 @@
   <footer class="footer">
     <p>&copy; 2025 Rubina Ahmed Mahar. Built with ❤️ and GitHub Pages.</p>
   </footer>
+  <a href="#about" class="scroll-down" title="Jump to About" id="scrollHint" style="position: fixed; bottom: 80px; right: 30px; background: linear-gradient(135deg, #9f7aea, #805ad5); color: white; padding: 12px 14px; border-radius: 50%; font-size: 18px; text-decoration: none; z-index: 1000; box-shadow: 0 6px 12px rgba(0,0,0,0.3); animation: pulse 1.5s infinite; transition: opacity 0.3s ease;">
+  <i class="fas fa-angle-down"></i>
+</a>
+
+<style>
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(159, 122, 234, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(159, 122, 234, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(159, 122, 234, 0);
+  }
+}
+.testimonial-dots {
+  margin-top: 20px;
+  text-align: center;
+}
+.testimonial-dot {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.testimonial-dot.active-dot {
+  background-color: #b98eff;
+}
+  .social-links a {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .social-links a:hover {
+    transform: scale(1.2);
+    color: #f4e06d;
+  }
+
+  /* Skills Grid */
+  #skills ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+  }
+  #skills li {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  #skills li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-4px);
+  }
+  .bar {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    height: 10px;
+    margin-top: 6px;
+  }
+  .bar > div {
+    height: 100%;
+    background: linear-gradient(90deg, #9f7aea, #805ad5);
+    color: #fff;
+    font-size: 10px;
+    text-align: right;
+    padding-right: 5px;
+    line-height: 10px;
+    border-radius: 4px;
+  }
+
+  .counter-box {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px auto 20px;
+  }
+  .counter {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
 </body>
 </html>
 
