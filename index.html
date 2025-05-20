@@ -38,7 +38,7 @@
 
   /* Add divider under nav */
   nav::after {
-  background: linear-gradient(135deg, #2c144a, #1a112e);
+  background: linear-gradient(135deg, #0f2027, #203a43);
     margin-top: 10px;
   }
 
@@ -63,8 +63,8 @@
     scroll-behavior: smooth;
   }
   body {
-  background-color: #1a112e;
-  color: #FFFFFF;
+  background-color: #101820;
+  color: #e0f7fa;
   font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
@@ -96,7 +96,7 @@
     transform: translateY(0);
   }
   nav {
-  background-color: #0B132B;
+  background-color: #16213e;
     padding: 10px;
     z-index: 999;
     text-align: center;
@@ -127,7 +127,7 @@
     justify-content: center;
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(120deg, #2f2e41, #46344e);
+    background: linear-gradient(120deg, #0f2027, #203a43);
   }
   .profile-pic {
     border-radius: 50%;
@@ -320,7 +320,7 @@
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
-  <button class="theme-toggle" onclick="toggleTheme()">
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle between light and dark themes">
     Toggle Theme
   </button>
   <div id="progress-bar"></div>
@@ -335,8 +335,9 @@
   </nav>
 
   <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); width: 80%; margin: 60px auto;">
-<section id="hero" class="hero animated-section">
-  <h1 id="typing-text" style="font-size: 3em; color: #ffffff; font-weight: 800; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);"></h1>
+<section id="hero" class="hero animated-section" style="position: relative; overflow: hidden;">
+  <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_jcikwtux.json" background="transparent" speed="1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;" loop autoplay></lottie-player>
+  <h1 id="typing-text" style="background: linear-gradient(to right, #ff758c, #ff7eb3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 3em; font-weight: 800; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Rubina Ahmed Mahar</h1>
   <h3 style="color: #D4AF37; font-size: 1.3em; margin-bottom: 30px; font-style: italic;">Data Analyst | Business Strategist</h3>
   <img src="Rubina_random.png" alt="Rubina Ahmed Mahar" class="profile-pic" style="box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); margin-bottom: 30px;">
   <a href="/mnt/data/rubina_ahmed_mahar_resume_2025.pdf" target="_blank" title="View my resume" style="display:inline-block; margin-bottom: 40px; padding:12px 24px; background: linear-gradient(135deg, #5BC0BE, #3A506B); color:#fff; text-decoration:none; border-radius:30px; font-weight:bold; font-size: 16px; box-shadow: 0 6px 12px rgba(0,0,0,0.3);">Download Resume</a>
@@ -383,7 +384,7 @@
   <p>I’ve completed a wide range of certifications from top institutions and learning platforms that have helped me build a solid foundation in data analysis, programming, and business intelligence. These credentials reflect both my technical expertise and my commitment to lifelong learning.</p>
   <p>My certifications span across practical tools like SQL, Python, Excel, and Power BI, as well as advanced business and strategy programs such as McKinsey Forward and CompTIA Data+. Each program has empowered me with industry-relevant skills that I apply directly in my projects and professional roles.</p>
   <div class="project-grid">
-  <div class="project-card">
+  <div class="project-card" style="box-shadow: 8px 8px 16px #0b0b0b, -8px -8px 16px #1b1b1b;">
     <h3>Core Certifications</h3>
     <ul>
       <li>Google Data Analytics – Coursera</li>
@@ -532,7 +533,7 @@ setInterval(() => {
   </form>
   <div class="social-links">
     <a href="https://www.linkedin.com/in/rubina-ahmed-mahar-b03b39220" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/RubinaAhmed-tech" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://github.com/RubinaAhmed-tech" title="Visit my GitHub" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
     <a href="mailto:rubinaahmed301@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
   </div>
 </section>
